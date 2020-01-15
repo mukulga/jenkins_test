@@ -3,7 +3,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'set'
+                bat 'echo "Hello. testing my pipeline"'
+                bat '''
+                    c:\\jdk1.8.0_231\\bin\\javac d:\\jenkins\\pipeline_examples\\java\\Test1.java
+                    c:\\jdk1.8.0_231\\bin\\java -classpath d:\\jenkins\\pipeline_examples\\java Test1 5
+                '''
             }
         }
     }
